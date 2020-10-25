@@ -1,0 +1,18 @@
+pipeline{
+  agent any
+  stages {
+      stage("checkout SCM"){
+        steps {
+          checkout scm
+        }
+      }
+      stage("Install node modules"){
+        sh 'npm install'
+      }
+      stage("Deploy"){
+        steps{
+          echo "Deploying to EC2.."
+          }
+      }
+  }
+}
