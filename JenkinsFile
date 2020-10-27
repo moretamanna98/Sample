@@ -15,7 +15,7 @@ pipeline {​​​​
     stages {​​​​
         stage('build') {​​​​
             steps {​​​​
-                echo 'npm --version'
+                echo 'npx --version'
             }​​​​
         }​​​​
     }​​​​
