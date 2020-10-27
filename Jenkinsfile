@@ -2,13 +2,19 @@ pipeline{
   agent any
   stages{
     stage("checkout SCM"){
-        checkout scm
+        steps{
+          echo "checkout scm"
+        }
     }
     stage("Install node modules"){
-        echo 'npm install'
+        steps{
+          echo 'npm install'
+        }
     }
     stage("Deploy"){
-        echo "Deploying to EC2.."
+        steps{
+          echo "Deploying to EC2.."
+        }
     }
   }
 }
