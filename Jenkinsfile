@@ -1,5 +1,6 @@
 pipeline{
   agent any
+  stages{
     stage("checkout SCM"){
         checkout scm
     }
@@ -9,6 +10,7 @@ pipeline{
     stage("Deploy"){
         echo "Deploying to EC2.."
     }
+  }
 }
 // pipeline {​​​​
 //     agent any
