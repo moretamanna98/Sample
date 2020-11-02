@@ -38,7 +38,7 @@ pipeline{
       // }
       stage("Install node modules"){
           steps {
-            nodejs('NodeJs-12.16.1'){
+            nodejs('NodeJs'){
               sh 'npm install'
               //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
             }
