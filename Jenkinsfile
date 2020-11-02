@@ -36,23 +36,24 @@ pipeline{
       //     checkout scm
       //   }
       // }
-      stage("Install node modules"){
-          steps {
-            nodejs('NodeJs'){
-              sh 'npm install'
-              //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
-            }
-          }
-      }
+      // stage("Install node modules"){
+      //     steps {
+      //       nodejs('NodeJs'){
+      //         sh 'npm install'
+      //         //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
+      //       }
+      //     }
+      // }
       stage("Build"){
           steps {
             echo "Building.."
           }
       }
-      stage('Archive') {
+      stage("Archive") {
           steps {
-              sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
-              archive 'dist.tar.gz'
+              // sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
+              // archive 'dist.tar.gz'
+              echo "Archiving!!"
             }
      }
       stage("Deploy"){
