@@ -36,14 +36,13 @@ pipeline{
       //     checkout scm
       //   }
       // }
-      // stage("Install node modules"){
-      //     steps {
-      //       nodejs('NodeJs'){
-      //         sh 'npm install'
-      //         //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
-      //       }
-      //     }
-      // }
+      stage("Install node modules"){
+          steps {
+              sh 'npm -v'
+              sh 'npm install'
+              //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
+          }
+      }
       stage("Build"){
           steps {
             echo "Building.."
