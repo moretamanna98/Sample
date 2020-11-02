@@ -31,16 +31,16 @@
 pipeline{
   agent any
   stages {
-      stage("checkout SCM"){
-        steps {
-          checkout scm
-        }
-      }
+      // stage("checkout SCM"){
+      //   steps {
+      //     checkout scm
+      //   }
+      // }
       stage("Install node modules"){
           steps {
             nodejs('NodeJs-12.16.1'){
               sh 'npm install'
-              sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
+              //sh 'node --max_old_space_size=6144 ./node_modules/@angular/cli/bin/ng build --prod'
             }
           }
       }
